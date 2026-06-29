@@ -1,5 +1,17 @@
-﻿const CACHE_NAME = "cow-desktop-pet-v3";
-const ASSETS = ["./", "./index.html", "./styles.css?v=3", "./app.js?v=3", "./manifest.webmanifest", "./assets/icon.svg"];
+﻿const CACHE_NAME = "cow-desktop-pet-v5";
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./styles.css?v=5",
+  "./app.js?v=5",
+  "./manifest.webmanifest",
+  "./assets/icon.svg",
+  "./assets/cow-3d.png?v=5",
+  "./assets/bg-morning.png?v=5",
+  "./assets/bg-day.png?v=5",
+  "./assets/bg-evening.png?v=5",
+  "./assets/bg-night.png?v=5"
+];
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
