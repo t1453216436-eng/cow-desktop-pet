@@ -10,7 +10,7 @@
     <title>奶牛桌宠</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="assets/icon.svg">
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
   </head>
   <body data-time="day">
     <main class="app-shell" aria-label="奶牛桌宠">
@@ -26,9 +26,9 @@
 
       <button class="cow-stage" id="cowButton" aria-label="摸摸奶牛">
         <span class="sleep-mark" id="sleepMark">Zz</span>
-        <span class="cow-lane" aria-hidden="true">
+        <span class="cow-lane" id="cowLane" aria-hidden="true">
           <span class="cow-shadow"></span>
-          <img class="cow cow-3d" src="assets/cow-3d.png?v=5" alt="">
+          <img class="cow cow-3d" id="cowSprite" src="assets/cow-walk-1.png?v=6" alt="">
         </span>
       </button>
 
@@ -46,6 +46,6 @@
       </nav>
     </main>
 
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=6"></script>
   </body>
 </html>
