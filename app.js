@@ -72,7 +72,7 @@ async function initModel() {
   }
 }
 function resizeModel() { if (!modelState.renderer || !modelLayer) return; const rect = modelLayer.getBoundingClientRect(); const width = Math.max(1, rect.width); const height = Math.max(1, rect.height); modelState.renderer.setSize(width, height, false); modelState.camera.aspect = width / height; modelState.camera.updateProjectionMatrix(); }
-function findAction(names) { for (const name of names) { const action = modelState.actions[name.toLowerCase()]; if (action) return action; } return Object.values(modelState.actions)[0]; }
+function findAction(names) { const entries = Object.entries(modelState.actions); for (const name of names) { const key = name.toLowerCase(); const exact = modelState.actions[key]; if (exact) return exact; const fuzzy = entries.find(([actionName]) => actionName.includes(key)); if (fuzzy) return fuzzy[1]; } return entries[0]?.[1]; }
 function playModelAction(kind) { if (!modelState.ready || !modelState.mixer) return; const action = kind === "sleep" ? findAction(["sleep", "idle"]) : kind === "graze" ? findAction(["graze", "eat", "eating", "idle"]) : findAction(["walk", "walking", "run", "idle"]); if (!action || action === modelState.currentAction) return; action.reset().fadeIn(0.25).play(); if (modelState.currentAction) modelState.currentAction.fadeOut(0.25); modelState.currentAction = action; }
 function updateModel(now) { if (!modelState.ready) return; const stageWidth = cowStage.clientWidth; const min = -1.35; const max = 1.35; const dt = modelState.clock.getDelta(); if (state.sleeping) { playModelAction("sleep"); } else if (motion.behavior === "graze" || state.hunger > 0.68) { playModelAction("graze"); } else { playModelAction("walk"); modelState.x += modelState.direction * dt * 0.22; if (modelState.x > max) { modelState.x = max; modelState.direction = -1; } if (modelState.x < min) { modelState.x = min; modelState.direction = 1; } }
   if (modelState.model) { modelState.model.position.x = modelState.x; modelState.model.rotation.y = modelState.direction > 0 ? Math.PI / 2 : -Math.PI / 2; }
@@ -85,3 +85,5 @@ cowStage.addEventListener("click", petHead);
 window.addEventListener("resize", () => { setViewportHeight(); resizeModel(); });
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
 setViewportHeight(); load(); render(); initModel(); requestAnimationFrame(loop); setInterval(render, 60000);
+
+
