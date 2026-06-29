@@ -1,15 +1,15 @@
-﻿const CACHE_NAME = "cow-desktop-pet-v7";
+﻿const CACHE_NAME = "cow-desktop-pet-v8";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=7",
-  "./app.js?v=7",
+  "./styles.css?v=8",
+  "./app.js?v=8",
   "./manifest.webmanifest",
   "./assets/icon.svg",
-  "./assets/bg-morning.png?v=7",
-  "./assets/bg-day.png?v=7",
-  "./assets/bg-evening.png?v=7",
-  "./assets/bg-night.png?v=7"
+  "./assets/bg-morning.png?v=8",
+  "./assets/bg-day.png?v=8",
+  "./assets/bg-evening.png?v=8",
+  "./assets/bg-night.png?v=8"
 ];
 
 self.addEventListener("install", (event) => {
