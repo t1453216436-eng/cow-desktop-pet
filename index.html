@@ -10,7 +10,14 @@
     <title>奶牛桌宠</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="assets/icon.svg">
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
+      <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+        }
+      }
+    </script>
   </head>
   <body data-time="day">
     <main class="app-shell" aria-label="奶牛桌宠">
@@ -27,7 +34,7 @@
       <button class="cow-stage" id="cowButton" aria-label="摸摸奶牛">
         <span class="sleep-mark" id="sleepMark">Zz</span>
         <span class="model-layer" id="modelLayer" aria-hidden="true">
-          <canvas id="cowCanvas"></canvas>
+          <canvas id="cowCanvas"></canvas><span class="model-status" id="modelStatus">3D模型</span>
         </span>
         <span class="cow-lane" id="cowLane" aria-hidden="true">
           <span class="cow-shadow"></span>
@@ -67,7 +74,9 @@
       </nav>
     </main>
 
-    <script type="module" src="app.js?v=9"></script>
+    <script type="module" src="app.js?v=10"></script>
   </body>
 </html>
+
+
 

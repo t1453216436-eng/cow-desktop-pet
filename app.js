@@ -35,7 +35,7 @@ async function initModel() {
     const response = await fetch("assets/models/cow.glb", { cache: "no-store" });
     if (!response.ok) return;
     const [THREE, loaderModule] = await Promise.all([
-      import("https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"),
+      import("three"),
       import("https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/loaders/GLTFLoader.js")
     ]);
     const url = URL.createObjectURL(await response.blob());
@@ -68,7 +68,7 @@ async function initModel() {
     document.body.classList.add("model-ready");
     resizeModel();
   } catch (error) {
-    console.info("3D model not loaded; using articulated fallback.", error);
+    console.info("3D model not loaded; using articulated fallback.", error); document.body.classList.add("model-failed");
   }
 }
 function resizeModel() { if (!modelState.renderer || !modelLayer) return; const rect = modelLayer.getBoundingClientRect(); const width = Math.max(1, rect.width); const height = Math.max(1, rect.height); modelState.renderer.setSize(width, height, false); modelState.camera.aspect = width / height; modelState.camera.updateProjectionMatrix(); }
@@ -85,5 +85,6 @@ cowStage.addEventListener("click", petHead);
 window.addEventListener("resize", () => { setViewportHeight(); resizeModel(); });
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
 setViewportHeight(); load(); render(); initModel(); requestAnimationFrame(loop); setInterval(render, 60000);
+
 
 

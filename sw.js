@@ -1,16 +1,16 @@
-﻿const CACHE_NAME = "cow-desktop-pet-v9";
+﻿const CACHE_NAME = "cow-desktop-pet-v10";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=9",
-  "./app.js?v=9",
+  "./styles.css?v=10",
+  "./app.js?v=10",
   "./manifest.webmanifest",
   "./assets/icon.svg",
-  "./assets/bg-morning.png?v=9",
-  "./assets/bg-day.png?v=9",
-  "./assets/bg-evening.png?v=9",
-  "./assets/bg-night.png?v=9",
-  "./assets/models/cow.glb?v=9"
+  "./assets/bg-morning.png?v=10",
+  "./assets/bg-day.png?v=10",
+  "./assets/bg-evening.png?v=10",
+  "./assets/bg-night.png?v=10",
+  "./assets/models/cow.glb?v=10"
 ];
 
 self.addEventListener("install", (event) => {
@@ -31,3 +31,4 @@ self.addEventListener("fetch", (event) => {
   }
   event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request)));
 });
+
