@@ -1,0 +1,12 @@
+﻿{
+  "name": "奶牛桌宠",
+  "short_name": "奶牛桌宠",
+  "description": "一只可以喂草、摸头、睡觉和洗澡的 iPhone 奶牛桌宠。",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#9ddfdf",
+  "theme_color": "#78c58e",
+  "icons": [{ "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
