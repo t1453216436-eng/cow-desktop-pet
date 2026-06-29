@@ -97,7 +97,5 @@ meter::-webkit-meter-optimum-value { border-radius:999px; background:#4879df; }
 .cow-lane { width:clamp(270px, 70vw, 356px); bottom:10%; } .actions button { min-height:72px; } }
 @media (max-height:760px) { .app-shell { gap:10px; }
 .cow-lane { width:clamp(200px, 58vw, 280px); } .speech,.stats { padding-block:10px; } .actions button { min-height:60px; } }
-
-
-
+body[data-time="night"] .speech { margin-top:clamp(88px, 10vh, 132px); }
 
