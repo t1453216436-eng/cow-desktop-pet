@@ -10,7 +10,7 @@
     <title>奶牛桌宠</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="assets/icon.svg">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
   </head>
   <body data-time="day">
     <main class="app-shell" aria-label="奶牛桌宠">
@@ -28,7 +28,25 @@
         <span class="sleep-mark" id="sleepMark">Zz</span>
         <span class="cow-lane" id="cowLane" aria-hidden="true">
           <span class="cow-shadow"></span>
-          <img class="cow cow-3d" id="cowSprite" src="assets/cow-walk-1.png?v=6" alt="">
+          <span class="cow-model" id="cowModel">
+            <span class="tail"><span></span></span>
+            <span class="leg leg-back rear"><span class="hoof"></span></span>
+            <span class="leg leg-back front"><span class="hoof"></span></span>
+            <span class="body-core"><span class="belly"></span></span>
+            <span class="neck"></span>
+            <span class="head-core">
+              <span class="horn horn-left"></span>
+              <span class="horn horn-right"></span>
+              <span class="ear ear-left"></span>
+              <span class="ear ear-right"></span>
+              <span class="forelock"></span>
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+              <span class="muzzle"><span></span><span></span></span>
+            </span>
+            <span class="leg leg-front rear"><span class="hoof"></span></span>
+            <span class="leg leg-front front"><span class="hoof"></span></span>
+          </span>
         </span>
       </button>
 
@@ -46,6 +64,6 @@
       </nav>
     </main>
 
-    <script src="app.js?v=6"></script>
+    <script src="app.js?v=7"></script>
   </body>
 </html>
